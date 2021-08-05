@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.dataService.transferUsername(this.loginForm.value.username);
-    // console.log(this.loginForm.value);
     this.loginForm.reset();
     this.router.navigate(['/products']);
   }

@@ -1,7 +1,5 @@
 <div class="products-container">
-
   <h3 class="welcome-message">Hi {{ username }}, Welcome</h3>
-
   <div class="products-list">
     <h2 class="products-header">Available Products</h2>
     <div class="row product-row" *ngFor="let products of displayProducts">
@@ -14,7 +12,6 @@
       </div>
     </div>
   </div>
-
   <div class="cart-list">
     <h2 class="cart-header">My Cart</h2>
     <div class="row cart-row" *ngFor="let products of displayCartProducts">
@@ -26,5 +23,4 @@
       </div>
     </div>
   </div>
-
 </div>
