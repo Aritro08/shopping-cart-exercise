@@ -1,0 +1,30 @@
+<div class="products-container">
+
+  <h3 class="welcome-message">Hi {{ username }}, Welcome</h3>
+
+  <div class="products-list">
+    <h2 class="products-header">Available Products</h2>
+    <div class="row product-row" *ngFor="let products of displayProducts">
+      <div class="col-lg-4" *ngFor="let product of products">
+        <div class="product">
+          <img [src]="product.image" [alt]="product.name" class="img-fluid product-img">
+          <h4>{{ product.name }}</h4>
+          <button class="btn btn-outline-dark" type="button" (click)="onAddToCart(product)">Add to cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-list">
+    <h2 class="cart-header">My Cart</h2>
+    <div class="row cart-row" *ngFor="let products of displayCartProducts">
+      <div class="col-lg-4" *ngFor="let product of products">
+        <div class="product">
+          <img [src]="product.image" [alt]="product.name" class="img-fluid product-img">
+          <h4>{{ product.name }}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
