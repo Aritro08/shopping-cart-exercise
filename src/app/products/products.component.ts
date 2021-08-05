@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { DataService } from '../data.service';
 import { Product } from '../product.interface';
@@ -39,13 +40,16 @@ export class ProductsComponent implements OnInit, OnDestroy {
   displayProducts: Product[][] = [];
   displayCartProducts: Product[][] = [];
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private router: Router) { }
 
   ngOnInit(): void {
     this.usernameSub = this.dataService.getUsername.subscribe(name => {
       this.username = name;
     });
     this.updateDisplayLists();
+    if(this.username == "") {
+      this.router.navigate(['/']);
+    }
   }
 
   onAddToCart(product: Product) {
