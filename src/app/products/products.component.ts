@@ -13,7 +13,7 @@ import { Product } from '../product.interface';
 export class ProductsComponent implements OnInit, OnDestroy {
 
   username: string = "";
-  usernameSub!: Subscription;
+  usernameSub!: Subscription; // get the username emitted from the data service
   productList: Product[] = [
     {
       id: 1,
@@ -37,8 +37,8 @@ export class ProductsComponent implements OnInit, OnDestroy {
     }
   ];
   cartList: Product[] = [];
-  displayProducts: Product[][] = [];
-  displayCartProducts: Product[][] = [];
+  displayProducts: Product[][] = []; // 2d array to display products in a grid format
+  displayCartProducts: Product[][] = []; // 2d array to display products in cart
 
   constructor(private dataService: DataService, private router: Router) { }
 

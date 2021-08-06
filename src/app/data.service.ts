@@ -12,7 +12,7 @@ export class DataService {
 
   transferUsername (username: string) {
     this.username = username;
-    this.usernameSub.next(this.username);
+    this.usernameSub.next(this.username); // emit the username to products page
   }
 
 }
